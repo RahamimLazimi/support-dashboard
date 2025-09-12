@@ -1,0 +1,92 @@
+{
+    "login": {
+      "title": "התחברות",
+      "email": "דוא\"ל",
+      "password": "סיסמה",
+      "button": "התחבר",
+      "errors": {
+        "requiredEmail": "יש להזין דוא\"ל",
+        "invalidEmail": "כתובת דוא\"ל לא תקינה",
+        "requiredPassword": "יש להזין סיסמה"
+      }
+    },
+    "register": {
+      "title": "הרשמה",
+      "name": "שם מלא",
+      "email": "דוא\"ל",
+      "password": "סיסמה",
+      "passwordConfirm": "אימות סיסמה",
+      "button": "הרשם",
+      "errors": {
+        "requiredName": "יש להזין שם מלא",
+        "requiredEmail": "יש להזין דוא\"ל",
+        "invalidEmail": "כתובת דוא\"ל לא תקינה",
+        "requiredPassword": "יש להזין סיסמה"
+      }
+    },
+    "logout": "התנתק",
+    "toggleLanguage": "החלף שפה",
+    "toggleTheme": "החלף מצב תצוגה",
+    "dashboard": {
+        "title": "לוח ניהול קריאות שירות",
+        "welcomeMen": "ברוך הבא",
+        "welcomeWoman": " ברוכה הבאה",
+        "newTicket": "פתח קריאה חדשה",
+        "hideForm": "הסתר טופס"
+    },
+    "admin": {
+        "title": "ניהול משתמשים",
+        "email": "אימייל",
+        "name": "שם מלא",
+        "role": "תפקיד",
+        "actions": "פעולות",
+        "roleUpdated": "התפקיד עודכן בהצלחה",
+        "cannotEditSelf": "לא ניתן לשנות את התפקיד שלך"
+    },
+    "tickets": {
+      "title": "קריאות שירות",
+      "form": "טופס קריאת שירות",
+      "subject": "נושא קריאה",
+      "loading": "טוען קריאות...",
+      "noTickets": "אין קריאות זמינות",
+      "create": "צור קריאה חדשה",
+      "createdAt": "נוצר ב",
+      "createdBy": "נוצר ע/\"י",
+      "success": "הכרטיס נוצר בהצלחה!",
+      "updateStatus": "עדכן סטטוס",
+      "priority": {
+        "title": "עדיפות", 
+        "low": "נמוך", 
+        "medium":"בינוני", 
+        "high": "גבוה", 
+        "critical":"קריטי"
+      },
+      "status": "סטטוס",
+      "assignedTo": "הוקצה ל",
+      "actions": "פעולות",
+      "newTicket": {
+        "title": "צור קריאה",
+        "submit": "שלח",
+        "cancel": "בטל",
+        "fields": {
+          "description": "תיאור",
+          "priority": "עדיפות"
+        },
+        "errors": {
+          "requiredTitle": "יש להזין כותרת",
+          "requiredDescription": "יש להזין תיאור"
+        }
+      }
+    },
+    "navbar": {
+      "login": "התחברות",
+      "register": "הרשמה",
+      "logout": "התנתק",
+      "tickets": "קריאות"
+    },
+    "errors": {
+      "unauthorized": "אין הרשאה, אנא התחבר",
+      "server": "אירעה שגיאה בשרת"
+    }
+  }
+  

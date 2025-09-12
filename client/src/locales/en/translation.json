@@ -1,0 +1,92 @@
+{
+    "login": {
+      "title": "Login",
+      "email": "Email",
+      "password": "Password",
+      "button": "Log In",
+      "errors": {
+        "requiredEmail": "Email is required",
+        "invalidEmail": "Invalid email address",
+        "requiredPassword": "Password is required"
+      }
+    },
+    "register": {
+      "title": "Register",
+      "name": "Full Name",
+      "email": "Email",
+      "password": "Password",
+      "passwordConfirm": "Password Confirm",
+      "button": "Sign Up",
+      "errors": {
+        "requiredName": "Name is required",
+        "requiredEmail": "Email is required",
+        "invalidEmail": "Invalid email address",
+        "requiredPassword": "Password is required"
+      }
+    },
+    "logout": "Logout",
+    "toggleLanguage": "Switch language",
+    "toggleTheme": "Toggle theme",
+    "dashboard": {
+        "title": "Support Tickets Management Dashboard",
+        "welcomeMen": "Welcome",
+        "welcomeWoman": "Welcome",
+        "newTicket": "New Ticket",
+        "hideForm": "Hide Form"
+    },
+    "admin": {
+        "title": "User Management",
+        "email": "Email",
+        "name": "Name",
+        "role": "Role",
+        "actions": "Actions",
+        "roleUpdated": "User role updated successfully",
+        "cannotEditSelf": "You cannot change your own role"
+    },
+    "tickets": {
+      "title": "Support Tickets",
+      "form": "Support Ticket Form",
+      "subject": "Ticket Subject",
+      "loading": "Loading tickets...",
+      "noTickets": "No tickets available",
+      "create": "Create New Ticket",
+      "createdAt": "Created At",
+      "createdBy": "Created By",
+      "updateStatus": "Update Status",
+      "priority": {
+        "title": "Priority", 
+        "low": "Low", 
+        "medium":"Medium", 
+        "high": "High", 
+        "critical":"Critical"
+      },
+      "status": "Status",
+      "assignedTo": "Assigned To",
+      "actions": "Actions",
+      "newTicket": {
+        "title": "Create Ticket",
+        "submit": "Submit",
+        "cancel": "Cancel",
+        "fields": {
+          "title": "Title",
+          "description": "Description",
+          "priority": "Priority"
+        },
+        "errors": {
+          "requiredTitle": "Title is required",
+          "requiredDescription": "Description is required"
+        }
+      }
+    },
+    "navbar": {
+      "login": "Login",
+      "register": "Register",
+      "logout": "Logout",
+      "tickets": "Tickets"
+    },
+    "errors": {
+      "unauthorized": "Unauthorized, please log in",
+      "server": "A server error occurred"
+    }
+  }
+  
