@@ -60,7 +60,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.PAT_TOKEN }}
-          external_repository: ${{ github.repository }}
           publish_dir: ./client/dist
           publish_branch: gh-pages
           destination_dir: dev
@@ -87,9 +86,8 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.PAT_TOKEN }}
-          external_repository: ${{ github.repository }}
           publish_dir: ./client/dist
           publish_branch: gh-pages
-          destination_dir: dev
+          destination_dir: prod
           user_name: github-actions[bot]
           user_email: github-actions[bot]@users.noreply.github.com
