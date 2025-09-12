@@ -59,10 +59,14 @@ jobs:
       - name: Deploy to GitHub Pages (dev)
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
+          personal_token: ${{ secrets.PAT_TOKEN }}
+          external_repository: ${{ github.repository }}
           publish_dir: ./client/dist
+          publish_branch: gh-pages
           destination_dir: dev
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com
+
 
   deploy-prod:
     needs: build
@@ -80,9 +84,12 @@ jobs:
           path: ./client/dist
 
       - name: Deploy to GitHub Pages (prod)
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
+          personal_token: ${{ secrets.PAT_TOKEN }}
+          external_repository: ${{ github.repository }}
           publish_dir: ./client/dist
-          destination_dir: prod
+          publish_branch: gh-pages
+          destination_dir: dev
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com
