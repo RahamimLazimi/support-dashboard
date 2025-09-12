@@ -46,7 +46,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: dev
-      url: https://<username>.github.io/<repo>/dev/
+      url: https://RahamimLazimi.github.io/support-dashboard/dev/
     if: github.ref == 'refs/heads/dev'
 
     steps:
@@ -69,7 +69,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: prod
-      url: https://<username>.github.io/<repo>/prod/
+      url: https://RahamimLazimi.github.io/support-dashboard/prod/
     if: github.ref == 'refs/heads/main'
 
     steps:
