@@ -1,0 +1,88 @@
+name: Build and Deploy with Manual Approvals
+
+on:
+  push:
+    branches:
+      - dev
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    outputs:
+      build-path: ./client/dist
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: |
+          cd client
+          npm install
+
+      - name: Build project
+        run: |
+          cd client
+          if [ "${{ github.ref }}" == "refs/heads/dev" ]; then
+            npm run build:dev
+          else
+            npm run build:prod
+          fi
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-dist
+          path: client/dist
+
+  deploy-dev:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: dev
+      url: https://<username>.github.io/<repo>/dev/
+    if: github.ref == 'refs/heads/dev'
+
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: build-dist
+          path: ./client/dist
+
+      - name: Deploy to GitHub Pages (dev)
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./client/dist
+          destination_dir: dev
+
+  deploy-prod:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: prod
+      url: https://<username>.github.io/<repo>/prod/
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: build-dist
+          path: ./client/dist
+
+      - name: Deploy to GitHub Pages (prod)
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./client/dist
+          destination_dir: prod
