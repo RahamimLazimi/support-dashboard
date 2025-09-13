@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { CssBaseline, StyledEngineProvider } from '@mui/material';
 import { Provider } from 'react-redux';
 
@@ -38,7 +38,7 @@ function AppWrapper({ children }: { children: React.ReactNode }) {
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
+      <HashRouter>
         <StyledEngineProvider injectFirst>
           <LanguageProvider>
             <AppWrapper>
@@ -47,7 +47,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             </AppWrapper>
           </LanguageProvider>
         </StyledEngineProvider>
-      </BrowserRouter>
+      </HashRouter>
     </Provider>
   </React.StrictMode>,
 );
