@@ -39,6 +39,7 @@ export async function register(data: RegisterRequest): Promise<void> {
 }
 
 export async function login(data: LoginRequest): Promise<User> {
+  //test
   const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/auth/login`, {
     method: 'POST',
     headers: {
