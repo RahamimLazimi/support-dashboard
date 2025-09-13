@@ -88,7 +88,7 @@ export default function RegisterPage() {
             onChange={(e) => setGender(e.target.value)}
             SelectProps={{ native: true }}
           >
-            {['זכר', 'נקבה'].map((gen) => (
+            {[t('register.gender.male'), t('register.gender.female')].map((gen) => (
               <option key={gen} value={gen}>
                 {gen}
               </option>

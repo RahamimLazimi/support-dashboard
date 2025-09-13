@@ -16,6 +16,7 @@
       "email": "דוא\"ל",
       "password": "סיסמה",
       "passwordConfirm": "אימות סיסמה",
+      "gender": {"male": "זכר", "female": "נקבה"},
       "button": "הרשם",
       "errors": {
         "requiredName": "יש להזין שם מלא",

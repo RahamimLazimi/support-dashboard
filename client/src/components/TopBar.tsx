@@ -37,7 +37,12 @@ const TopBar: React.FC = () => {
           {/* אם המשתמש מחובר, מציגים "Welcome, שם מלא" */}
           {user && (
             <Typography variant="subtitle1" sx={{ ml: 2 }}>
-              {t(user.gender === 'זכר' ? 'dashboard.welcomeMen' : 'dashboard.welcomeWoman')},&nbsp;
+              {t(
+                user.gender === t('register.gender.male')
+                  ? 'dashboard.welcomeMen'
+                  : 'dashboard.welcomeWoman',
+              )}
+              ,&nbsp;
               {user.name} אל אתר "{t('dashboard.title')}"
             </Typography>
           )}

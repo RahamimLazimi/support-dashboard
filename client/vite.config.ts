@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
       port: 3000,
       proxy: {
         '/api': {
-          target: mode === 'prod' ? 'https://api.prod.com' : 'http://localhost:5000',
+          target: process.env.VITE_API_BASE_URL,
           changeOrigin: true,
           secure: false,
         },

@@ -14,6 +14,7 @@
       "title": "Register",
       "name": "Full Name",
       "email": "Email",
+      "gender": {"male": "Male", "female": "Female"},
       "password": "Password",
       "passwordConfirm": "Password Confirm",
       "button": "Sign Up",
