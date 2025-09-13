@@ -13,7 +13,7 @@ COPY SupportDashboard.Api.csproj ./
 RUN dotnet restore "./SupportDashboard.Api.csproj"
 
 # העתק את כל שאר הקוד
-COPY . .  # כל התוכן של תיקיית server כבר כאן
+COPY . .
 
 # בניית האפליקציה
 RUN dotnet publish "./SupportDashboard.Api.csproj" -c Release -o /app/publish
