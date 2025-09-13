@@ -1,22 +1,27 @@
-# Dockerfile
-
-# Use the official .NET SDK image
+# שלב 1: תמונת בסיס להרצה
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
 
+# שלב 2: תמונת בסיס לבנייה
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# Copy csproj and restore as distinct layers
+# העתק את קובץ הפרויקט
 COPY ["SupportDashboard.Api.csproj", "./"]
+
+# שחזור תלויות
 RUN dotnet restore "./SupportDashboard.Api.csproj"
 
-# Copy everything else and build
+# העתק את כל שאר הקוד
 COPY . .
+
+# בניית האפליקציה
 RUN dotnet publish "./SupportDashboard.Api.csproj" -c Release -o /app/publish
 
-# Final stage/image
+# שלב 3: יצירת התמונה הסופית
 FROM base AS final
 WORKDIR /app
 COPY --from=build /app/publish .
+
+# הגדרת הפקודה שתורץ
 ENTRYPOINT ["dotnet", "SupportDashboard.Api.dll"]
