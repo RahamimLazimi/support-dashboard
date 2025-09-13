@@ -7,13 +7,13 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # העתק את קובץ הפרויקט
-COPY server/SupportDashboard.Api.csproj ./
+COPY SupportDashboard.Api.csproj ./
 
 # שחזור תלויות
 RUN dotnet restore "./SupportDashboard.Api.csproj"
 
 # העתק את כל שאר הקוד
-COPY server/. ./
+COPY . .  # כל התוכן של תיקיית server כבר כאן
 
 # בניית האפליקציה
 RUN dotnet publish "./SupportDashboard.Api.csproj" -c Release -o /app/publish
