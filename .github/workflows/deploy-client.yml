@@ -29,17 +29,27 @@ jobs:
       - name: Create environment file
         run: |
           cd client
+          echo "📦 Creating .env file"
           echo "VITE_API_BASE_URL=${{ vars.VITE_API_BASE_URL }}" > .env
-      - name: Check .env file content
+      - name: Check .env file content (debug)
         run: |
           cd client
+          echo "📄 Contents of .env file:"
           cat .env
-      - name: Build project
+
+      - name: Print environment variables
+        run: |
+          echo "🧪 GitHub Environment: ${{ github.ref }}"
+          echo "🧪 VITE_API_BASE_URL from GitHub Environment: ${{ vars.VITE_API_BASE_URL }}"
+
+      - name: Build project (Vite)
         run: |
           cd client
           if [ "${{ github.ref }}" == "refs/heads/dev" ]; then
+            echo "🚧 Building for DEV"
             npm run build:dev
           else
+            echo "🚧 Building for PROD"
             npm run build:prod
           fi
 

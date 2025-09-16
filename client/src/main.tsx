@@ -51,6 +51,3 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     </Provider>
   </React.StrictMode>,
 );
-
-console.log('MODE:', import.meta.env.MODE);
-console.log('MODE:', import.meta.env.VITE_API_BASE_URL);
