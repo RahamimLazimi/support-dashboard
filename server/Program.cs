@@ -13,14 +13,15 @@ using System.Text.Json.Serialization;
 DotNetEnv.Env.Load();
 
 var builder = WebApplication.CreateBuilder(args);
-var allowedClient = builder.Configuration["AllowedClient"];
+var allowedClients = builder.Configuration["AllowedClient"]!
+    .Split(",", StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
 
 // ========== CORS ==========
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins(allowedClient!) // כתובת ה-React
+        policy.WithOrigins(allowedClients)
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials();
