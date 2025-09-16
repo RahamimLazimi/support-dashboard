@@ -40,7 +40,7 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
     document.documentElement.setAttribute('dir', direction);
   }, [direction]);
 
-  const theme = useMemo(() => createOliveTheme(mode), [mode]);
+  const theme = useMemo(() => createOliveTheme(mode, direction), [mode, direction]);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, mode, toggleDarkMode }}>
