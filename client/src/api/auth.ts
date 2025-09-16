@@ -39,12 +39,13 @@ export async function register(data: RegisterRequest): Promise<void> {
 }
 
 export async function login(data: LoginRequest): Promise<User> {
-  const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/auth/login`, {
+  const baseUrl = import.meta.env.MODE === 'dev' ? '/api' : import.meta.env.VITE_API_BASE_URL;
+
+  const response = await fetch(`${baseUrl}/auth/login`, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data),
+    credentials: 'include',
   });
 
   if (!response.ok) {

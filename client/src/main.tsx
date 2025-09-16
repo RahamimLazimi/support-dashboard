@@ -51,3 +51,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     </Provider>
   </React.StrictMode>,
 );
+
+console.log('MODE:', import.meta.env.MODE);
