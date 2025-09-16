@@ -39,7 +39,7 @@ export async function register(data: RegisterRequest): Promise<void> {
 }
 
 export async function login(data: LoginRequest): Promise<User> {
-  const baseUrl = import.meta.env.MODE === 'dev' ? '/api' : import.meta.env.VITE_API_BASE_URL;
+  const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
   const response = await fetch(`${baseUrl}/auth/login`, {
     method: 'POST',
